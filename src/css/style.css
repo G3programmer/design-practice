@@ -34,18 +34,86 @@
     list-style: none;
     gap: 40px;
 }
-
 .cabecalho .container .navegacao ul li a {
+    position: relative;
     text-decoration: none;
     color: #000000;
     font-size: 20px;
     font-weight: bold;
     font-family: "Indie Flower", cursive;
     font-style: normal;
+    transition: transform 0.3s ease;
+}
+
+.cabecalho .container .navegacao ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; 
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.4s ease;
+}
+
+.cabecalho .container .navegacao ul li a:hover::after {
+    width: 100%;
 }
 
 .cabecalho .container .navegacao ul li a:hover {
-    color: #000000;
-    text-decoration: underline;
+    transform: scale(1.1);
 }
 
+.home {
+    display: grid;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;    
+}
+
+.home .text-area {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    margin: 60px;
+    justify-content: center;
+    text-align: center;
+}
+
+.home .text-area .titulo {
+    font-size: 60px;
+    color: #000000;
+   font-family: "Sacramento", cursive;
+    font-weight: bold;
+}
+
+.home .vitrine {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os cartões */
+    align-items: flex-start; /* Alinha os itens no topo */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 1200px; /* Limita a largura do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+}
+
+        .titulo {
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+        }
+        .vitrine {
+            padding: 20px;
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05); /* Efeito de hover para destacar */
+        }
+        .card-img {
+            height: 150px; /* Altura fixa para as imagens */
+            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+        }
